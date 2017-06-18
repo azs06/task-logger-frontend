@@ -1,0 +1,14 @@
+{
+  "name": "task-logger",
+  "version": "1.0.0",
+  "description": "A task logger application",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Md.Atiquzzaman <atik.aiub@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.4.2"
+  }
+}
