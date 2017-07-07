@@ -1,0 +1,29 @@
+.is-fullwidth{
+    width: 100%;
+}
+.nav-item.nav-search{
+    flex: 1 1 auto;
+    max-width: 75%;
+    margin: 0 auto;
+}
+.nav-item.nav-menu{
+    padding: 0;
+}
+.card.card-menu{
+    position: absolute;
+    min-width: 120px;
+    top: 85%;
+    left: 10px;
+}
+.card.card-menu.nav-action-menu{
+    top: 80%;
+    right: 10px;
+    left: auto;   
+}
+@media all and (min-width: 768px){
+    .card.card-menu.action-menu{
+        top: 80%;
+        right: 10px;
+        left: auto;
+    }
+}
