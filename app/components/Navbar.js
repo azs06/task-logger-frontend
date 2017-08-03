@@ -1,6 +1,7 @@
 import React from 'react';
 import NavMenu from './NavMenu';
 import SearchInput from './SearchInput';
+import { NavLink } from 'react-router-dom';
 
 export default class NavBar extends React.Component{
     constructor(props){
@@ -37,9 +38,9 @@ export default class NavBar extends React.Component{
         let isMenuOn = this.state.isMenuOn;
         return(
     <nav className="nav has-shadow">
-        <a href="#" className="nav-item">
+        <NavLink to="/" exact className="nav-item">
         Task Logger
-      </a>
+        </NavLink>
         <div className="nav-item nav-search">
             <div className="field is-fullwidth">
                 <SearchInput />
@@ -47,9 +48,9 @@ export default class NavBar extends React.Component{
         </div>
         {
             !isLoggedIn && 
-            <a className="nav-item" href="#" onClick={this.handleLogin}>
+            <NavLink exact activeClassName="active" className="nav-item" to="/login">
                 Login
-            </a>
+            </NavLink>   
         }
         {
           isLoggedIn && 

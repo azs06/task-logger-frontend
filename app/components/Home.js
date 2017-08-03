@@ -3,14 +3,13 @@ import HeaderBlock from './HeaderBlock';
 import TaskInput from './TaskInput';
 import TaskCard from './TaskCard';
 
-export default class Home extends React.Component{
+class Home extends React.Component{
     constructor(props){
         super(props)
     }
     render(){
         return(
             <div>
-                <HeaderBlock />
                 <main>
                     <section className="section">
                         <div className="container">
@@ -31,3 +30,5 @@ export default class Home extends React.Component{
         );
     }
 }
+
+module.exports = Home;

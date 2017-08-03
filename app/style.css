@@ -27,3 +27,29 @@
         left: auto;
     }
 }
+.formHeader .subtitle{
+    padding: 0 0.75rem 0.75rem;
+}
+.loginButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.grid--column{
+    flex-direction: column;
+}
+.grid--row{
+    flex-direction: row;
+}
+.icon-cross{
+    display: none;
+}
+.input:focus + .icon-search {
+    display: none;
+}
+.input:focus + .icon-search + .icon-cross{
+    display: inline-flex;
+}
+.is-right.icon.icon-cross{
+    pointer-events: inherit;
+}
