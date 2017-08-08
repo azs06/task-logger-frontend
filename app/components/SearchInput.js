@@ -16,15 +16,19 @@ class SearchInput extends React.Component{
     }
     handleFocus(e){
         e.preventDefault();
-        if(this.props.location.path === '/search' || this.props.location.path === '/search/results') return;
+        if(this.props.location.pathname === '/search/results' || this.props.location.pathname === '/search') return;
         this.props.history.push('/search');
     }
     handleChange(e){
         this.setState({
             searchInput: e.target.value
         });
-        if(this.props.location.path === '/search/results') return;
-        this.props.history.push('/search/results');
+        const searchParam = `?search=${e.target.value}`;
+        //if(this.props.location.pathname === '/search/results') return;
+        this.props.history.push({
+            pathname: '/search/results',
+            search: searchParam
+        });
     }
     render(){
         return(
