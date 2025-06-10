@@ -7,39 +7,40 @@ import Login from './components/LoginForm.js';
 import Signup from './components/SignupForm.js';
 import SearchPage from './components/SearchPage.js';
 import ResultsPage from './components/ResultsPage.js';
-import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
+
+// Define a functional component for the button to use the useNavigate hook
+const NavigateButton = () => {
+  let navigate = useNavigate();
+  return (
+    <button type='button' onClick={() => navigate('/search')}>
+      Click Me!
+    </button>
+  );
+};
 
 class App extends React.Component{
     constructor(props){
         super(props);
     }
     render(){
-        const Button = withRouter(({ history}) => (
-        <button
-        type='button'
-            onClick={() => { history.push('/search') }}
-        >
-            Click Me!
-        </button>
-        ))
         return(
              <BrowserRouter>
             <div>
                 <HeaderBlock />
-                <Switch>
-                <Route exact path="/" component={Home}/> 
-                <Route path="/login" component={Login} />
-                <Route path="/signup" component={Signup} />
-                <Route exact path="/search" component={SearchPage} />
-                <Route path="/search/results" component={ResultsPage} />
-                <Route render={function(){
-                        return(
+                {/* <NavigateButton />  You can place this button where it was intended to be used */}
+                <Routes>
+                <Route exact path="/" element={<Home />}/>
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route exact path="/search" element={<SearchPage />} />
+                <Route path="/search/results" element={<ResultsPage />} />
+                <Route path="*" element={ // Use path="*" for a catch-all route for "Not Found"
                             <div>
                                <p>Not Found!!</p> 
                             </div>    
-                        )
-                }} />
-                </Switch>                     
+                        } />
+                </Routes>
             </div>
              </BrowserRouter>
         )
