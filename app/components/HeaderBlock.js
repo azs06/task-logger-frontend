@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from './NavBar';
+import Navbar from './Navbar';
 
 export default class HeaderBlock extends React.Component{
     constructor(props){
@@ -8,7 +8,7 @@ export default class HeaderBlock extends React.Component{
     render(){
         return(
             <header>
-                <NavBar />
+                <Navbar />
             </header>            
         );
     }

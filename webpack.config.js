@@ -30,8 +30,9 @@ if(process.env.NODE_ENV === 'production'){
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
             }
         })
-    ),
-    new webpack.optimize.UglifyJsPlugin()
+    )
+    // UglifyJsPlugin is no longer needed in Webpack 5 for production mode,
+    // as minification is handled by default with TerserWebpackPlugin.
 }
 
 module.exports = config;
